@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="cut">
+            <i class='bx bx-x'></i>
+        </div>
+        <div class="text3">
+            <div class="txt4"> 
+                <a href=""><p><u>Home</u> </p></a>
+            </div>
+            <div class="txt4"> 
+                <a href="{% url 'businessman_panellogin' %}"><p><u>Businessman Panel</u> </p></a>
+            </div>
+            <div class="txt4"> 
+                <a href=""><p><u></u></p></a>
+            </div>
+            <div class="txt4"> 
+                <a href=""><p><u></u></p></a>
+            </div>
+        </div>
+    </div>
+
+    <form action="" class="search-bar">
+        <input type="search" placeholder="Search Your ToDo" name="search" pattern=".\S." required>
+        <button class="search-btn" type="submit">
+            <span>Search</span>
+        </button>
+    </form>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebar = document.querySelector(".sidebar");
+        const cutbutton = document.querySelector(".cut");
+        const menubutton = document.querySelector(".menu-icon");
+
+        menubutton.addEventListener('click', () => {
+            sidebar.classList.add("active");
+        });
+
+        cutbutton.addEventListener('click', () => {
+            sidebar.classList.remove("active");
+        });
+    });
+</script>
+</html>

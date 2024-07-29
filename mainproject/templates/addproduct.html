@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="rakhosab">
+        <form class="input1" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input placeholder="Enter the Product Name" name="title1">
+            <input placeholder="Enter the Price of the Product" name="price1">
+            <textarea placeholder="Enter the detailed description of the Product" rows="15" cols="35" name="description1"></textarea>
+            <input  type="file" name="image1" id="img">
+            <button type="submit">Add Product</button>   
+        </form>
+    </div>
+{% endblock %}

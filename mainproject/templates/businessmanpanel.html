@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="card-container">
+        {% for i in my_objects %}
+        <div class="card1">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <img src="{{i.productimage.url}}" height="260px" width="500px" alt="productimage" class="productimage">
+                <p id="price">{{i.productname}}</p>
+                <p id="price">Price : {{i.productprice}}</p>
+                <p id="description">{{i.productdescription}}</p>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
